@@ -105,26 +105,20 @@ def process_and_store_weather(base_folder, engine, table_name, year_month_folder
                 method='multi',
                 chunksize=1000
             )
-            print(f"✅ SQL 저장 완료")
+            print(f"SQL 저장 완료")
         except Exception as e:
-            print(f"❌ SQL 저장 실패: {e}")
+            print(f"SQL 저장 실패: {e}")
             traceback.print_exc()
     else:
         print("저장할 데이터 없음")
 
 # 실행
-if __name__ == "__main__":
-    try:
-        base_folder = "/0. Raw data"
-
-        # 실행
-        process_and_store_weather(
+# 폴더 설정
+base_folder = "/0. Raw data"
+# 함수 실행
+process_and_store_weather(
             base_folder=base_folder,
             engine=engine,
             table_name="weather_stats",
             year_month_folder="2025.8"
         )
-        
-    except Exception as e:
-        print(f"실행 실패: {e}")
-        traceback.print_exc()
