@@ -228,21 +228,17 @@ def clean_and_append_sql(base_folder, engine, table_name):
                 print(f"{year}년 데이터 SQL 저장 완료")
                 
             except Exception as e:
-                print(f"❌ {year}년 SQL 저장 실패: {e}")
+                print(f"{year}년 SQL 저장 실패: {e}")
                 traceback.print_exc()
         else:
             print(f"{year}년 저장할 데이터 없음")
     
     print(f"전체 처리 완료!")
 
-# 사용법
-if __name__ == "__main__":
-    try:
-        base_folder = "/0. Raw data"
+# 실행
+# 폴더 설정
+base_folder = "/0. Raw data"
         
-        # 함수 실행
-        clean_and_append_sql(base_folder, engine=engine, table_name="weather_stats")
-        
-    except Exception as e:
-        print(f"❌ 실행 실패: {e}")
-        traceback.print_exc()
+# 함수 실행
+clean_and_append_sql(base_folder, engine=engine, table_name="weather_stats")
+
