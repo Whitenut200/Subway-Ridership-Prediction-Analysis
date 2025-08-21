@@ -35,7 +35,7 @@ def clean_and_append_sql(base_folder, engine, table_name):
                 continue
                 
             try:
-                # 1. 파일명에서 구분과 기준연월 추출
+                # 파일명에서 구분과 기준연월 추출
                 parts = file.replace(".csv", "").split("_")
                 if len(parts) < 3:
                     print(f"파일명 형식 이상: {file}")
@@ -78,7 +78,7 @@ def clean_and_append_sql(base_folder, engine, table_name):
                     print(f"빈 파일: {file}")
                     continue
                 
-                # 2. 열 이름 변경 (첫 번째 행이 헤더인지 확인)
+                # 열 이름 변경 (첫 번째 행이 헤더인지 확인)
                 첫행 = df.iloc[0].astype(str).str.lower()
                 
                 if any('hour' in str(val).lower() for val in 첫행):
@@ -110,7 +110,7 @@ def clean_and_append_sql(base_folder, engine, table_name):
                         print(f"예상치 못한 컬럼 수: {len(df.columns)} in {file}")
                         continue
                 
-                # 3. 중복 'hour' 체크 (두 번째 등장부터는 중복 데이터)
+                # 중복 'hour' 체크 (두 번째 등장부터는 중복 데이터)
                 # 열이름이 두번 나오고 데이터가 중복되어 나오는 경우가 존재
                 hour_indices = df[df['시간'].astype(str).str.contains('hour', case=False, na=False)].index.tolist()
                 
@@ -125,7 +125,7 @@ def clean_and_append_sql(base_folder, engine, table_name):
                 if df.empty:
                     continue
                 
-                # 4. 날짜 변수 생성
+                # 날짜 변수 생성
                 print(f"날짜 생성 시작 (기준: {기준년}년 {기준월}월)")
                 날짜목록 = []
                 current_year = 기준년
