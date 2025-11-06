@@ -11,7 +11,7 @@ DB_HOST = ""
 DB_PORT = "5432"
 DB_NAME = "subway"
 
-S3_BUCKET = "subway-whitenut-bucket"
+S3_BUCKET = ""
 S3_KEY_PREFIX = "prepared_data"  # 결과 저장 폴더 (CSV)
 # ===================
 
