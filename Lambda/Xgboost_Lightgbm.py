@@ -5,7 +5,7 @@ import pandas as pd
 from sqlalchemy import create_engine, text
 
 # ==== 설정 ====
-S3_BUCKET = "subway-whitenut-bucket"
+S3_BUCKET = ""
 PREDICTIONS_PREFIX = "predictions/"
 # RDS
 DB_USER = ""
