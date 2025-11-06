@@ -10,7 +10,7 @@ from io import BytesIO
 from sqlalchemy import create_engine, text
 
 # 설정
-S3_BUCKET = "subway-whitenut-S3_BUCKET"
+S3_BUCKET = ""
 S3_KEY_PREFIX = "prepared_data"  # 결과 저장 폴더 (CSV)
 INPUT_PREFIX = "prepared_data"
 OUTPUT_PREFIX = "predictions"
