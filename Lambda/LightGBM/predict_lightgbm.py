@@ -5,7 +5,7 @@ import numpy as np
 from io import BytesIO
 
 # ===== 설정 =====
-S3_BUCKET = "subway-whitenut-bucket"
+S3_BUCKET = ""
 INPUT_PREFIX = "prepared_data"     # 전처리 완료된 데이터가 있는 폴더
 OUTPUT_PREFIX = "predictions"      # 예측 CSV 저장 폴더
 
